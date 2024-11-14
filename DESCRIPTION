@@ -1,0 +1,24 @@
+Package: imageTCGA
+Type: Package
+Title: TCGA Diagnostic Image Database Explorer
+Version: 0.1.0
+Author: Ilaria Billato
+Maintainer: The package maintainer <ilaria.billato@phd.unidp.it>
+Description: A Shiny application to explore the TCGA Diagnostic Image Database.
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
+Imports:
+    shiny,
+    DT,
+    dplyr,
+    bslib,
+    bsicons,
+    ggplot2,
+    viridis,
+    tidyr,
+    leaflet,
+    xlsx
+RoxygenNote: 7.3.2
+Depends: 
+    R (>= 2.10)
