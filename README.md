@@ -1,6 +1,7 @@
-# imageTCGA
+# imageTCGA <img align="right" width="170" src="https://github.com/billila/imageTCGA/blob/main/imageTCGA.png">
 
 `imageTCGA` is an R package designed to provide an interactive Shiny application for exploring the TCGA Diagnostic Image Database. This application allows users to filter and visualize clinical data, geographic distribution, and other relevant statistics related to TCGA diagnostic images.
+
 
 ## Installation and Setup
 
