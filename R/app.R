@@ -1,4 +1,4 @@
-#' TCGAExplorer: A Shiny application to explore the TCGA Diagnostic Image Database
+#' imageTCGA: A Shiny application to explore the TCGA Diagnostic Image Database
 #'
 #' @import shiny
 #' @import DT
