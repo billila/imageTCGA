@@ -2,10 +2,10 @@
 % Please edit documentation in R/app.R
 \name{imageTCGA}
 \alias{imageTCGA}
-\title{TCGAExplorer: A Shiny application to explore the TCGA Diagnostic Image Database}
+\title{imageTCGA: A Shiny application to explore the TCGA Diagnostic Image Database}
 \usage{
 imageTCGA()
 }
 \description{
-TCGAExplorer: A Shiny application to explore the TCGA Diagnostic Image Database
+imageTCGA: A Shiny application to explore the TCGA Diagnostic Image Database
 }
