@@ -1,0 +1,90 @@
+---
+title: "imageTCGA:  A Shiny application to explore the TCGA Diagnostic Image Database"
+author:
+- name: Ilaria Billato
+  affiliation: [
+    "Department of Biology, University of Padova"
+  ]
+- name: Marcel Ramos
+  affiliation: >
+    CUNY Graduate School of Public Health and Health Policy, New York, NY USA
+- name: Vincent J. Carey
+  affiliation: > 
+    Channing Lab, Brigham and Womens Hospital,
+    Harvard University, Boston, MA USA
+- name: Sean Davis
+  affiliation: > 
+    Channing Lab, Brigham and Womens Hospital,
+    Harvard University, Boston, MA USA
+- name: Sehyun Oh
+  affiliation: > 
+    CUNY Graduate School of Public Health and Health Policy, New York, NY USA
+- name: Levi Waldron
+  affiliation: > 
+    CUNY Graduate School of Public Health and Health Policy, New York, NY USA
+- name: Davide Risso
+  affiliation: > 
+    Department of Statistical Sciences, University of Padova
+- name: Chiara Romualdi
+  affiliation: > 
+    Department of Biology, University of Padova
+- name: ADD OTHERS
+  affiliation: > 
+    Department of Biology, University of Padova
+package: imageTCGA
+output:
+  BiocStyle::html_document:
+    toc: false
+vignette: >
+  %\VignetteIndexEntry{imageTCGA}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+# imageTCGA
+
+`imageTCGA` is an R package designed to provide an interactive Shiny application for exploring the TCGA Diagnostic Image Database. This application allows users to filter and visualize clinical data, geographic distribution, and other relevant statistics related to TCGA diagnostic images.
+
+
+# Installation
+
+```{r,eval=FALSE}
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install("imageTCGA")
+```
+
+## Installation and Setup
+
+Follow the steps below to install and load the package.
+
+```{r,eval=FALSE}
+# Step 1: Install devtools if you haven't already
+install.packages("devtools")
+
+# Step 2: Load devtools
+library("devtools")
+
+# Step 3: Install imageTCGA from GitHub
+devtools::install_github("billila/imageTCGA")
+
+# Step 4: Load imageTCGA
+library(imageTCGA)
+```
+
+## Run the shiny App
+After installing the package, you can run the Shiny application by executing the following command in R:
+
+```{r,eval=FALSE}
+# run:
+imageTCGA::imageTCGA()
+```
+
+This command will launch the interactive application in your default web browser.
+
+# Session Info
+
+```{r}
+sessionInfo()
+```

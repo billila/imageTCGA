@@ -8,7 +8,7 @@ Authors@R: c(
 Description: A Shiny application to explore the TCGA Diagnostic Image Database.
 License: Artistic-2.0
 Encoding: UTF-8
-LazyData: true
+LazyData: false
 biocViews: ShinyApps
 Imports:
     shiny,
@@ -23,4 +23,4 @@ Imports:
     clipr
 RoxygenNote: 7.3.2
 Depends: 
-    R (>= 2.10)
+    R (>= 4.4.0)
