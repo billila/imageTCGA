@@ -1,4 +1,4 @@
-#' imageTCGAnew: A Shiny application to explore the TCGA Diagnostic Image Database
+#' imageTCGAnew: A Shiny application to explore the TCGA DiagnosticImageDatabase
 #'
 #' @import shiny
 #' @import DT
@@ -12,13 +12,10 @@
 #'
 #' @export
 imageTCGAnew <- function() {
-  source("R/ui.R")
-  source("R/server.R")
-  source("R/observers.R")
-  db <- imageTCGA:::db
-  ui <- build_ui()
-  server <- build_server
-  app <- shinyApp(ui = ui, server = server)
-  return(app)
+    db <- imageTCGA:::db
+    ui <- build_ui()
+    server <- build_server
+    app <- shinyApp(ui = ui, server = server)
+    return(app)
 }
 

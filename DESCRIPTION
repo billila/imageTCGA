@@ -5,11 +5,11 @@ Version: 0.1.0
 Authors@R: c(
     person("Ilaria", "Billato", , "ilaria.billato@phd.unipd.it",
         c("aut", "cre"), c(ORCID = "0000-0002-3335-3254")))
-Maintainer: The package maintainer <ilaria.billato@phd.unidp.it>
 Description: A Shiny application to explore the TCGA Diagnostic Image Database.
 License: Artistic-2.0
 Encoding: UTF-8
 LazyData: true
+biocViews: ShinyApps
 Imports:
     shiny,
     DT,
@@ -20,7 +20,7 @@ Imports:
     viridis,
     tidyr,
     leaflet,
-    xlsx
+    clipr
 RoxygenNote: 7.3.2
 Depends: 
     R (>= 2.10)
