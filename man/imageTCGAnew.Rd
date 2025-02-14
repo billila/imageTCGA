@@ -9,3 +9,8 @@ imageTCGAnew()
 \description{
 imageTCGAnew: A Shiny application to explore the TCGA DiagnosticImageDatabase
 }
+\examples{
+# Example usage:
+library(imageTCGA)
+imagaTCGA::imageTCGA()
+}

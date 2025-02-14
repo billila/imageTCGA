@@ -9,8 +9,7 @@
 #' @import viridis
 #' @import tidyr
 #' @import leaflet
-#'
-#' @export
+
 create_project_input <- function(db) {
     selectInput("project", "Project ID",
         choices = unique(db$Project.ID),

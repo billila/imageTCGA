@@ -9,8 +9,7 @@
 #' @import viridis
 #' @import tidyr
 #' @import leaflet
-#'
-#' @export
+
 
 build_ui <- function() {
     db <- imageTCGA:::db

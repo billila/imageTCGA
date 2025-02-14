@@ -9,8 +9,9 @@
 #' @import viridis
 #' @import tidyr
 #' @import leaflet
-#'
-#' @export
+#' @keywords internal
+
+
 
 generate_r_code <- function(filtered_data) {
     file_ids <- paste(sprintf('"%s"', filtered_data$File.ID),

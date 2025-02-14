@@ -9,8 +9,7 @@
 #' @import viridis
 #' @import tidyr
 #' @import leaflet
-#'
-#' @export
+
 reset_filters_observer <- function(input, session) {
   observeEvent(input$reset_filters, {
     updateSelectInput(session, "project", selected = character(0))

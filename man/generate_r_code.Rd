@@ -9,3 +9,4 @@ generate_r_code(filtered_data)
 \description{
 utils: utility function for imageTCGA
 }
+\keyword{internal}

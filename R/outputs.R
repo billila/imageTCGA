@@ -9,8 +9,7 @@
 #' @import viridis
 #' @import tidyr
 #' @import leaflet
-#'
-#' @export
+
 generate_summary_statistics <- function(filtered_data) {
     total_records <- nrow(filtered_data())
     unique_cases <- length(unique(filtered_data()$Case.ID))

@@ -11,6 +11,11 @@
 #' @import leaflet
 #'
 #' @export
+#'
+#' @examples
+#' # Example usage:
+#' library(imageTCGA)
+#' imagaTCGA::imageTCGA()
 imageTCGAnew <- function() {
     db <- imageTCGA:::db
     ui <- build_ui()
