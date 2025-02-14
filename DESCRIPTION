@@ -21,6 +21,16 @@ Imports:
     tidyr,
     leaflet,
     clipr
+Suggests:
+    BiocManager,
+    BiocStyle,
+    knitr,
+    rmarkdown,
+    sessioninfo,
+    shinytest2
 RoxygenNote: 7.3.2
 Depends: 
     R (>= 4.4.0)
+BugReports: https://github.com/billila/imageTCGA/issues
+URL: https://github.com/billila/imageTCGA
+VignetteBuilder: knitr

@@ -1,5 +1,5 @@
 ---
-title: "imageTCGA:  A Shiny application to explore the TCGA Diagnostic Image Database"
+title: "imageTCGA: A Shiny application to explore the TCGA Diagnostic Image Database"
 author:
 - name: Ilaria Billato
   affiliation: [
@@ -55,21 +55,12 @@ if (!requireNamespace("BiocManager", quietly = TRUE))
 BiocManager::install("imageTCGA")
 ```
 
-## Installation and Setup
+## Setup
 
-Follow the steps below to install and load the package.
+Load the package.
 
 ```{r,eval=FALSE}
-# Step 1: Install devtools if you haven't already
-install.packages("devtools")
-
-# Step 2: Load devtools
-library("devtools")
-
-# Step 3: Install imageTCGA from GitHub
-devtools::install_github("billila/imageTCGA")
-
-# Step 4: Load imageTCGA
+# load imageTCGA
 library(imageTCGA)
 ```
 
@@ -77,7 +68,6 @@ library(imageTCGA)
 After installing the package, you can run the Shiny application by executing the following command in R:
 
 ```{r,eval=FALSE}
-# run:
 imageTCGA::imageTCGA()
 ```
 
