@@ -3,7 +3,7 @@
 #' @return Filtered dataframe
 #' @noRd
 .filter_data <- function(input) {
-    data <- imageTCGA:::db
+    data <- db
 
     if (!is.null(input$project) && length(input$project) > 0) {
         data <- data %>% filter(Project.ID %in% input$project)
@@ -96,3 +96,9 @@ lapply(file_ids, gdcdata)', file_ids)
     if (is.null(s)) return(NULL)
     .filter_data(input)[s, ]
 }
+
+
+utils::globalVariables(c("Project.ID", "Sample.Type", "Source.Site", "state",
+    "Case.ID", "lat", "lon", "bcr_patient_uuid",
+    "Data.Type", "Var1", "Var2", "Freq", "reorder",
+    "setNames", ".render_selected_images_table"))

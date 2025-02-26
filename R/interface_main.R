@@ -31,19 +31,19 @@
     accordion_panel(
         "Filters",
         selectInput("project", "Project ID",
-            choices = unique(imageTCGA:::db$Project.ID),
+            choices = unique(db$Project.ID),
             multiple = TRUE
         ),
         selectInput("sample_type", "Sample Type",
-            choices = unique(imageTCGA:::db$Sample.Type),
+            choices = unique(db$Sample.Type),
             multiple = TRUE
         ),
         selectInput("source_site", "Source Site",
-            choices = unique(imageTCGA:::db$Source.Site),
+            choices = unique(db$Source.Site),
             multiple = TRUE
         ),
         selectInput("state", "State",
-            choices = unique(imageTCGA:::db$state),
+            choices = unique(db$state),
             multiple = TRUE
         ),
         textInput("case_search", "Search Case ID", ""),
@@ -65,11 +65,11 @@
     accordion_panel(
         "Heatmap Parameters",
         selectInput("heatmap_x", "Heatmap X-axis",
-            choices = names(imageTCGA:::db),
+            choices = names(db),
             selected = "Project.ID"
         ),
         selectInput("heatmap_y", "Heatmap Y-axis",
-            choices = names(imageTCGA:::db),
+            choices = names(db),
             selected = "Sample.Type"
         )
     )

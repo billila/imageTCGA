@@ -35,7 +35,7 @@
         ),
         card(
             card_header("Filtered Data Table"),
-            DTOutput("data_table")
+            DT::DTOutput("data_table")
         ),
         card(
             card_header(

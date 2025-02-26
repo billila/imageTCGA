@@ -6,7 +6,7 @@
 .setup_outputs <- function(input, output, session) {
     # Statistics outputs
     output$total_records <- renderText({
-        nrow(imageTCGA:::db)
+        nrow(db)
     })
 
     output$unique_cases <- renderText({
@@ -41,12 +41,12 @@
     })
 
     # Data table
-    output$data_table <- renderDT({
+    output$data_table <- DT::renderDT({
         .render_data_table(.filter_data(input))
     })
 
     # Selected images table
-    output$selected_images_table <- renderDT({
+    output$selected_images_table <- DT::renderDT({
         .render_selected_images_table(.get_selected_rows(input))
     })
 }
