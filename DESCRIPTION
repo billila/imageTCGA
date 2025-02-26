@@ -1,17 +1,34 @@
 Package: imageTCGA
 Type: Package
 Title: TCGA Diagnostic Image Database Explorer
-Version: 0.1.0
+Version: 0.99.0
 Authors@R: c(
-    person("Ilaria", "Billato", , "ilaria.billato@phd.unipd.it",
-        c("aut", "cre"), c(ORCID = "0000-0002-3335-3254")))
+    person("Ilaria", "Billato", email = "ilaria.billato@phd.unipd.it",
+            role = c("aut", "cre"), comment = c(ORCID = "0000-0002-3335-3254", 
+            affiliation = "Department of Biology, University of Padova")),
+    person("Marcel", "Ramos", role = "ctb",
+            comment = c(affiliation = 
+            "CUNY Graduate School of Public Health and Health Policy, 
+            New York, NY USA")),
+    person("Sehyun", "Oh", role = "ctb",
+            comment = c(affiliation = 
+            "CUNY Graduate School of Public Health and Health Policy, 
+            New York, NY USA")),
+    person("Levi", "Waldron", role = "ctb",
+           comment = c(affiliation = 
+           "CUNY Graduate School of Public Health and Health Policy, 
+           New York, NY USA")),
+    person("Davide", "Risso", role = "ctb",
+           comment = c(affiliation = "Department of Statistical Sciences, 
+           University of Padova")),
+    person("Chiara", "Romualdi", role = "ctb",
+           comment = c(affiliation = "Department of Biology, University of Padova")))
 Description: A Shiny application to explore the TCGA Diagnostic Image Database.
 License: Artistic-2.0
 Encoding: UTF-8
 LazyData: false
 biocViews: ShinyApps
 Imports:
-    shiny,
     DT,
     dplyr,
     bslib,
@@ -20,17 +37,20 @@ Imports:
     viridis,
     tidyr,
     leaflet,
-    clipr
+    clipr,
+    rlang
 Suggests:
     BiocManager,
     BiocStyle,
     knitr,
     rmarkdown,
     sessioninfo,
-    shinytest2
+    shinytest2, 
+    GenomicDataCommons
 RoxygenNote: 7.3.2
 Depends: 
-    R (>= 4.4.0)
+    R (>= 4.4.0),
+    shiny
 BugReports: https://github.com/billila/imageTCGA/issues
 URL: https://github.com/billila/imageTCGA
 VignetteBuilder: knitr

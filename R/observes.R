@@ -30,7 +30,7 @@
 
     # File selection observer
     observe({
-        choices <- setNames(
+        choices <- stats::setNames(
             .filter_data(input)$File.ID,
             .filter_data(input)$File.Name
         )

@@ -49,6 +49,7 @@
     output$selected_images_table <- DT::renderDT({
         .render_selected_images_table(.get_selected_rows(input))
     })
+
 }
 
 #' Render the map visualization
@@ -85,8 +86,8 @@
     req(data)
 
     data %>%
-        count(state) %>%
-        ggplot(aes(x = reorder(state, n), y = n)) +
+        count(.data$state) %>%
+        ggplot(aes(x = stats::reorder(.data$state, n), y = n)) +
         geom_bar(stat = "identity", fill = "steelblue") +
         coord_flip() +
         theme_minimal() +
@@ -109,8 +110,8 @@
 .render_heatmap <- function(data) {
     req(data)
 
-    ggplot(data, aes(x = Var2, y = Var1)) +
-        geom_point(aes(size = Freq, color = Freq)) +
+    ggplot(data, aes(x = .data$Var2, y = .data$Var1)) +
+        geom_point(aes(size = .data$Freq, color = .data$Freq)) +
         theme_classic() +
         theme(axis.text.x = element_text(angle = 60, hjust = 1)) +
         scale_color_viridis(direction = 1) +
@@ -139,19 +140,19 @@
         mutate(Data.Type = paste0(
             '<a href=
 "https://portal.gdc.cancer.gov/image-viewer/MultipleImageViewerPage?caseId=',
-            bcr_patient_uuid,
+            .data$bcr_patient_uuid,
             '" target="_blank">',
-            Data.Type,
+            .data$Data.Type,
             '</a>'
         ))
 
-    datatable(
+    DT::datatable(
         data_with_links,
         escape = FALSE,
         options = list(
             pageLength = 10,
             scrollX = TRUE,
-            rowCallback = JS(
+            rowCallback = DT::JS(
                 "function(row, data, index) {",
                 "  if ($(row).hasClass('selected')) {",
                 "    $(row).css({'background-color':

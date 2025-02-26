@@ -1,4 +1,5 @@
 #' Filter the database based on user inputs
+#' @importFrom rlang .data
 #' @param input Shiny input object
 #' @return Filtered dataframe
 #' @noRd
@@ -6,24 +7,24 @@
     data <- db
 
     if (!is.null(input$project) && length(input$project) > 0) {
-        data <- data %>% filter(Project.ID %in% input$project)
+        data <- data %>% filter(.data$Project.ID %in% input$project)
     }
 
     if (!is.null(input$sample_type) && length(input$sample_type) > 0) {
-        data <- data %>% filter(Sample.Type %in% input$sample_type)
+        data <- data %>% filter(.data$Sample.Type %in% input$sample_type)
     }
 
     if (!is.null(input$source_site) && length(input$source_site) > 0) {
-        data <- data %>% filter(Source.Site %in% input$source_site)
+        data <- data %>% filter(.data$Source.Site %in% input$source_site)
     }
 
     if (!is.null(input$state) && length(input$state) > 0) {
-        data <- data %>% filter(state %in% input$state)
+        data <- data %>% filter(.data$state %in% input$state)
     }
 
     if (!is.null(input$case_search) && input$case_search != "") {
         data <- data %>%
-            filter(grepl(input$case_search, Case.ID, ignore.case = TRUE))
+            filter(grepl(input$case_search, .data$Case.ID, ignore.case = TRUE))
     }
 
     data
@@ -35,10 +36,10 @@
 #' @noRd
 .prepare_geo_data <- function(data) {
     data %>%
-        group_by(Source.Site, lat, lon, state) %>%
+        group_by(.data$Source.Site, .data$lat, .data$lon, .data$state) %>%
         summarize(
             samples = n(),
-            cases = n_distinct(Case.ID),
+            cases = n_distinct(.data$Case.ID),
             .groups = 'drop'
         )
 }
@@ -96,9 +97,3 @@ lapply(file_ids, gdcdata)', file_ids)
     if (is.null(s)) return(NULL)
     .filter_data(input)[s, ]
 }
-
-
-utils::globalVariables(c("Project.ID", "Sample.Type", "Source.Site", "state",
-    "Case.ID", "lat", "lon", "bcr_patient_uuid",
-    "Data.Type", "Var1", "Var2", "Freq", "reorder",
-    "setNames", ".render_selected_images_table"))

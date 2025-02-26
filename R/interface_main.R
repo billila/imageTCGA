@@ -4,7 +4,7 @@
 .build_ui <- function() {
     fluidPage(
         theme = bs_theme(bootswatch = "flatly"),
-        titlePanel("TCGA Diagnostic Image Database Explorer"),
+        titlePanel("imageTCGA: Diagnostic Image Database Explorer"),
         fluidRow(
             column(3, .build_sidebar_panel()),
             column(9, .build_main_panel())
@@ -81,8 +81,6 @@
 .build_main_panel <- function() {
     tabsetPanel(
         .build_summary_tab(),
-        .build_hovernet_tab(),
-        .build_gigapath_tab(),
         .build_heatmap_tab(),
         .build_geographic_tab(),
         .build_about_tab()

@@ -38,38 +38,8 @@
             DT::DTOutput("data_table")
         ),
         card(
-            card_header(
-                "Download R Code",
-                div(
-                    style = "float: right;",
-                    actionButton("copy_code", "", icon = icon("copy"))
-                )
-            ),
+            card_header("Download R Code"),
             verbatimTextOutput("download_code")
-        )
-    )
-}
-
-#' Build the HoverNet features tab
-#' @return A Shiny tab panel
-#' @noRd
-.build_hovernet_tab <- function() {
-    tabPanel(
-        "HoverNet Features",
-        card(
-            card_header("HoverNet Features")
-        )
-    )
-}
-
-#' Build the Prov-GigaPath features tab
-#' @return A Shiny tab panel
-#' @noRd
-.build_gigapath_tab <- function() {
-    tabPanel(
-        "Prov-GigaPath Features",
-        card(
-            card_header("Prov-GigaPath Features")
         )
     )
 }
@@ -134,40 +104,41 @@
             column(6,
                 card(
                     card_header("Author Information"),
-                    card_body(
-                        tags$h4("PhD Student"),
-                        tags$p(
-                            tags$strong("Name: "), "Ilaria Billato",
-                            tags$br(),
-                            tags$strong("Email: "),
-                            "ilaria.billato@phd.unipd.it",
-                            tags$br(),
-                            tags$strong("Institution: "), "University of Padova"
+                    card_body(tags$h4("PhD Student"),tags$p(
+                        tags$strong("Name: "), "Ilaria Billato",tags$br(),
+                        tags$strong("Email: "),"ilaria.billato@phd.unipd.it",
+                        tags$br(),
+                        tags$strong("Institution: "), "University of Padova"
                         )
                     )
                 )
             ),
-            column(6,
-                card(
+            column(6, card(
                     card_header("Project Details"),
-                    card_body(
-                        tags$h4("About this Application"),
+                    card_body(tags$h4("imageTCGA"),
                         tags$p(
                             "This Shiny application was developed to explore
                             the TCGA Diagnostic Image Database with the
                             possibility to extract the R code to download
-                            diagnostic image features from different tools.",
+                            diagnostic image with GenomicsDataCommon
+                            Bioconductor package.",
                             tags$br(),
-                            tags$strong("Version: "), "1.0",
+                            tags$strong("Package Version: "), "0.99",
                             tags$br(),
-                            tags$strong("Last Updated: "),
-                            format(Sys.Date(), "%B %d, %Y"),
-                            tags$br(), tags$br(),
-                            "For more information about the project,
-                            please visit:",
-                            tags$a(
-                                href = "https://romualdi.bio.unipd.it/",
-                                "Romualdi Lab website", target = "_blank"
+                            tags$strong("Bioconductor Version: "), "3.21",
+                            tags$br(), tags$strong("Source: "),
+                            tags$a(href =
+                                "https://github.com/billila/imageTCGA/",
+                                "https://github.com/billila/imageTCGA/",
+                                target = "_blank"
+                            ),
+                            tags$br(),tags$strong("Last Updated: "),
+                            format(Sys.Date(), "%B %d, %Y"),tags$br(),
+                            tags$br(),"For bugs and suggestion please visit:",
+                            tags$br(), tags$a(href =
+                                "https://github.com/billila/imageTCGA/issues",
+                                "https://github.com/billila/imageTCGA/issues",
+                                target = "_blank"
                             )
                         )
                     )

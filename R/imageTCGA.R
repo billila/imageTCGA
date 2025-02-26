@@ -4,7 +4,6 @@
 #' download data from the TCGA Diagnostic Image Database.
 #'
 #' @import shiny
-#' @importFrom DT datatable JS renderDT DTOutput
 #' @import dplyr
 #' @import bslib
 #' @import bsicons
