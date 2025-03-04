@@ -46,9 +46,9 @@
     })
 
     # Selected images table
-    output$selected_images_table <- DT::renderDT({
-        .render_selected_images_table(.get_selected_rows(input))
-    })
+    # output$selected_images_table <- DT::renderDT({
+    #     .render_selected_images_table(.get_selected_rows(input))
+    # })
 
 }
 

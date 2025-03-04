@@ -8,10 +8,6 @@ author:
 - name: Marcel Ramos
   affiliation: >
     CUNY Graduate School of Public Health and Health Policy, New York, NY USA
-- name: Vincent J. Carey
-  affiliation: > 
-    Channing Lab, Brigham and Womens Hospital,
-    Harvard University, Boston, MA USA
 - name: Sean Davis
   affiliation: > 
     Channing Lab, Brigham and Womens Hospital,
@@ -28,9 +24,6 @@ author:
 - name: Chiara Romualdi
   affiliation: > 
     Department of Biology, University of Padova
-- name: ADD OTHERS
-  affiliation: > 
-    Department of Biology, University of Padova
 package: imageTCGA
 output:
   BiocStyle::html_document:
@@ -43,11 +36,21 @@ vignette: >
 
 # imageTCGA
 
-`imageTCGA` is an R package designed to provide an interactive Shiny
+`imageTCGA` is an R package designed to provide an interactive Shiny 
 application for exploring the TCGA Diagnostic Image Database. 
-This application allows users to filter and visualize clinical data,
-geographic distribution, and other relevant statistics related to 
-TCGA diagnostic images.
+This application allows users to filter and visualize metadata, 
+geographic distribution, and other relevant statistics 
+related to TCGA diagnostic images.
+
+This package is part of the Multi-omic Integration of Histopathology 
+Image Analysis working group, which addresses the need for
+standardized workflows to integrate histopathology image-derived 
+features with genomic and transcriptomic analyses in R/Bioconductor. 
+`imageTCGA` lays the foundation for a comprehensive platform where
+pre-extracted image features from Python-based tools from TCGA 
+will be made accessible within R/Bioconductor data structures, 
+streamlining data integration and accelerating research in 
+computational pathology and precision oncology.
 
 
 # Installation

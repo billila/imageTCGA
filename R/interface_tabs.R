@@ -104,8 +104,8 @@
             column(6,
                 card(
                     card_header("Author Information"),
-                    card_body(tags$h4("PhD Student"),tags$p(
-                        tags$strong("Name: "), "Ilaria Billato",tags$br(),
+                    card_body(tags$p(
+                        tags$strong("Mantainer: "), "Ilaria Billato",tags$br(),
                         tags$strong("Email: "),"ilaria.billato@phd.unipd.it",
                         tags$br(),
                         tags$strong("Institution: "), "University of Padova"
