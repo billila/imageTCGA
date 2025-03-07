@@ -1,7 +1,7 @@
 Package: imageTCGA
 Type: Package
 Title: TCGA Diagnostic Image Database Explorer
-Version: 0.99.0
+Version: 0.99.1
 Authors@R: c(
     person("Ilaria", "Billato", email = "ilaria.billato@phd.unipd.it",
             role = c("aut", "cre"), comment = c(ORCID = "0000-0002-3335-3254", 
