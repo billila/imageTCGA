@@ -1,95 +1,67 @@
-# test_that(".filter_data applica correttamente i filtri sui dati", {
-#   db_example <- tibble::tibble(
-#     Case.ID = c("TCGA-01-0001", "TCGA-02-0001", "TCGA-03-0001"),
-#     Project.ID = c("TCGA-GBM", "TCGA-LUAD", "TCGA-GBM"),
-#     Sample.Type = c("Primary Tumor", "Primary Tumor", "Metastatic Tumor"),
-#     Source.Site = c("MD Anderson Cancer Center", "Johns Hopkins", "MD Anderson Cancer Center"),
-#     state = c("Texas", "California", "Texas")
-#   )
-#
-#   input <- list(
-#     project = c("TCGA-GBM"),
-#     sample_type = c("Primary Tumor"),
-#     source_site = c("MD Anderson Cancer Center"),
-#     state = c("Texas"),
-#     case_search = "TCGA-01-0001"
-#   )
-#
-#   assign("db", db_example, envir = .GlobalEnv)
-#   filtered_data <- imageTCGA:::.filter_data(input)
-#
-#   expect_equal(nrow(filtered_data), 1)
-#   expect_equal(filtered_data$Case.ID, "TCGA-01-0001")
-#   expect_true("Texas" %in% filtered_data$state)
-#   expect_true("MD Anderson Cancer Center" %in% filtered_data$Source.Site)
-# })
+test_that(".prepare_geo_data correctly aggregates geographic data", {
+        db_example <- tibble::tibble(
+                Case.ID = c("TCGA-01-0001", "TCGA-02-0001", "TCGA-03-0001"),
+                Source.Site = c("MD Anderson Cancer Center",
+                                "Johns Hopkins", "MD Anderson Cancer Center"),
+                lat = c(29.7604, 34.0522, 29.7604),
+                lon = c(-95.3698, -118.2437, -95.3698),
+                state = c("Texas", "California", "Texas")
+        )
 
-test_that(".prepare_geo_data aggrega correttamente i dati geografici", {
-  db_example <- tibble::tibble(
-    Case.ID = c("TCGA-01-0001", "TCGA-02-0001", "TCGA-03-0001"),
-    Source.Site = c("MD Anderson Cancer Center", "Johns Hopkins", "MD Anderson Cancer Center"),
-    lat = c(29.7604, 34.0522, 29.7604),
-    lon = c(-95.3698, -118.2437, -95.3698),
-    state = c("Texas", "California", "Texas")
-  )
+        assign("db", db_example, envir = .GlobalEnv)
+        geo_data <- imageTCGA:::.prepare_geo_data(db_example)
 
-  assign("db", db_example, envir = .GlobalEnv)
-  geo_data <- imageTCGA:::.prepare_geo_data(db_example)
-
-  expect_equal(nrow(geo_data), 2)  # Dati aggregati per lat/lon e state
+        expect_equal(nrow(geo_data), 2)
 })
 
+test_that(".prepare_heatmap_data correctly prepares data for the heatmap", {
+        db_example <- tibble::tibble(
+                Case.ID = c("TCGA-01-0001", "TCGA-02-0001", "TCGA-03-0001"),
+                Project.ID = c("TCGA-GBM", "TCGA-GBM", "TCGA-GBM"),
+                Sample.Type = c("Primary Tumor", "Primary Tumor",
+                                "Metastatic Tumor"),
+                Source.Site = c("MD Anderson Cancer Center",
+                                "Johns Hopkins", "MD Anderson Cancer Center"),
+                state = c("Texas", "California", "Texas"),
+                gene = c("BRCA1", "BRCA2", "BRCA1")
+        )
 
-test_that(".prepare_heatmap_data prepara correttamente i dati per la heatmap", {
-  db_example <- tibble::tibble(
-    Case.ID = c("TCGA-01-0001", "TCGA-02-0001", "TCGA-03-0001"),
-    Project.ID = c("TCGA-GBM", "TCGA-GBM", "TCGA-GBM"),
-    Sample.Type = c("Primary Tumor", "Primary Tumor", "Metastatic Tumor"),
-    Source.Site = c("MD Anderson Cancer Center", "Johns Hopkins", "MD Anderson Cancer Center"),
-    state = c("Texas", "California", "Texas"),
-    gene = c("BRCA1", "BRCA2", "BRCA1")
-  )
+        input <- list(heatmap_x = "gene", heatmap_y = "state")
 
-  input <- list(heatmap_x = "gene", heatmap_y = "state")
+        assign("db", db_example, envir = .GlobalEnv)
+        heatmap_data <- imageTCGA:::.prepare_heatmap_data(db_example, input)
 
-  assign("db", db_example, envir = .GlobalEnv)
-  heatmap_data <- imageTCGA:::.prepare_heatmap_data(db_example, input)
-
-  expect_equal(nrow(heatmap_data), 2)  # Dati aggregati per gene e stato
-  expect_equal(heatmap_data$Var1[1], "Texas")
-  expect_equal(heatmap_data$Var2[1], "BRCA1")
-  expect_equal(attr(heatmap_data, "x_label"), "gene")
-  expect_equal(attr(heatmap_data, "y_label"), "state")
+        expect_equal(nrow(heatmap_data), 2)
+        expect_equal(heatmap_data$Var1[1], "Texas")
+        expect_equal(heatmap_data$Var2[1], "BRCA1")
+        expect_equal(attr(heatmap_data, "x_label"), "gene")
+        expect_equal(attr(heatmap_data, "y_label"), "state")
 })
 
-test_that(".generate_download_code crea correttamente il codice di download", {
-  db_example <- tibble::tibble(
-    File.ID = c("file_1", "file_2", "file_3"),
-    Case.ID = c("TCGA-01-0001", "TCGA-02-0001", "TCGA-03-0001")
-  )
+test_that(".generate_download_code correctly creates download code", {
+        db_example <- tibble::tibble(
+                File.ID = c("file_1", "file_2", "file_3"),
+                Case.ID = c("TCGA-01-0001", "TCGA-02-0001", "TCGA-03-0001")
+        )
 
-  assign("db", db_example, envir = .GlobalEnv)
-  download_code <- imageTCGA:::.generate_download_code(db_example)
+        assign("db", db_example, envir = .GlobalEnv)
+        download_code <- imageTCGA:::.generate_download_code(db_example)
 
-  expect_true(grepl("file_ids <- c", download_code))
-  expect_true(grepl('"file_1",', download_code))
-  expect_true(grepl('"file_2",', download_code))
+        expect_true(grepl("file_ids <- c", download_code))
+        expect_true(grepl('"file_1",', download_code))
+        expect_true(grepl('"file_2",', download_code))
 })
 
+test_that(".get_selected_rows correctly returns selected rows", {
+        db_example <- tibble::tibble(
+                Case.ID = c("TCGA-01-0001", "TCGA-02-0001", "TCGA-03-0001"),
+                Project.ID = c("TCGA-GBM", "TCGA-LUAD", "TCGA-GBM")
+        )
 
-test_that(".get_selected_rows restituisce correttamente le righe selezionate", {
-  db_example <- tibble::tibble(
-    Case.ID = c("TCGA-01-0001", "TCGA-02-0001", "TCGA-03-0001"),
-    Project.ID = c("TCGA-GBM", "TCGA-LUAD", "TCGA-GBM")
-  )
+        input <- list(data_table_rows_selected = c(1, 3))
 
-  input <- list(data_table_rows_selected = c(1, 3))  # Selezioniamo le righe 1 e 3
+        assign("db", db_example, envir = .GlobalEnv)
+        selected_rows <- imageTCGA:::.get_selected_rows(input)
 
-  assign("db", db_example, envir = .GlobalEnv)
-  selected_rows <- imageTCGA:::.get_selected_rows(input)
-
-  expect_equal(nrow(selected_rows), 2)  # Due righe selezionate
-
+        expect_equal(nrow(selected_rows), 2)
 })
-
-
