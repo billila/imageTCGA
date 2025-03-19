@@ -45,7 +45,9 @@ Suggests:
     knitr,
     rmarkdown,
     sessioninfo,
-    shinytest2, 
+    shinytest2,
+    testthat,
+    tibble,
     GenomicDataCommons
 RoxygenNote: 7.3.2
 Depends: 

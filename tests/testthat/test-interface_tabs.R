@@ -1,0 +1,63 @@
+
+test_that("`.build_summary_tab()` constructs the correct Summary Statistics tab", {
+  summary_tab <- imageTCGA:::.build_summary_tab()
+
+  # Check it's a valid Shiny UI object
+  expect_s3_class(summary_tab, "shiny.tag")
+
+  # Check tab title
+  expect_true(grepl("Summary Statistics", summary_tab$attribs$title))
+
+  # Check for key components
+  expect_true(any(grepl("total_records", as.character(summary_tab))))
+  expect_true(any(grepl("unique_cases", as.character(summary_tab))))
+  expect_true(any(grepl("filtered_records", as.character(summary_tab))))
+  expect_true(any(grepl("data_table", as.character(summary_tab))))
+  expect_true(any(grepl("download_code", as.character(summary_tab))))
+})
+
+
+test_that("`.build_heatmap_tab()` constructs the correct Heatmap plot tab", {
+  heatmap_tab <- imageTCGA:::.build_heatmap_tab()
+
+  # Check it's a valid Shiny UI object
+  expect_s3_class(heatmap_tab, "shiny.tag")
+
+  # Check tab title
+  expect_true(grepl("Heatmap plot", heatmap_tab$attribs$title))
+
+  # Check for key components
+  expect_true(any(grepl("heatmap", as.character(heatmap_tab))))
+})
+
+test_that("`.build_geographic_tab()` constructs the correct Geographic Distribution tab", {
+  geographic_tab <- imageTCGA:::.build_geographic_tab()
+
+  # Check it's a valid Shiny UI object
+  expect_s3_class(geographic_tab, "shiny.tag")
+
+  # Check tab title
+  expect_true(grepl("Geographic Distribution", geographic_tab$attribs$title))
+
+  # Check for key components
+  expect_true(any(grepl("map", as.character(geographic_tab))))
+  expect_true(any(grepl("num_cities", as.character(geographic_tab))))
+  expect_true(any(grepl("num_states", as.character(geographic_tab))))
+  expect_true(any(grepl("state_bars", as.character(geographic_tab))))
+})
+
+test_that("`.build_about_tab()` constructs the correct About tab", {
+  about_tab <- imageTCGA:::.build_about_tab()
+
+  # Check it's a valid Shiny UI object
+  expect_s3_class(about_tab, "shiny.tag")
+
+  # Check tab title
+  expect_true(grepl("About", about_tab$attribs$title))
+
+  # Check for key details
+  expect_true(any(grepl("Ilaria Billato", as.character(about_tab))))
+  expect_true(any(grepl("University of Padova", as.character(about_tab))))
+  expect_true(any(grepl("imageTCGA", as.character(about_tab))))
+  expect_true(any(grepl("https://github.com/billila/imageTCGA/", as.character(about_tab))))
+})
