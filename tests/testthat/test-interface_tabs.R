@@ -1,4 +1,4 @@
-test_that("`.build_summary_tab()` constructs the correct tab", {
+test_that(".build_summary_tab() constructs the correct tab", {
     summary_tab <- imageTCGA:::.build_summary_tab()
     expect_s3_class(summary_tab, "shiny.tag")
     expect_true(grepl("Summary Statistics", summary_tab$attribs$title))
@@ -9,14 +9,14 @@ test_that("`.build_summary_tab()` constructs the correct tab", {
     expect_true(any(grepl("download_code", as.character(summary_tab))))
 })
 
-test_that("`.build_heatmap_tab()` constructs the correct Heatmap plot tab", {
+test_that(".build_heatmap_tab() constructs the correct Heatmap plot tab", {
     heatmap_tab <- imageTCGA:::.build_heatmap_tab()
     expect_s3_class(heatmap_tab, "shiny.tag")
     expect_true(grepl("Heatmap plot", heatmap_tab$attribs$title))
     expect_true(any(grepl("heatmap", as.character(heatmap_tab))))
 })
 
-test_that("`.build_geographic_tab()` constructs the correct tab", {
+test_that(".build_geographic_tab() constructs the correct tab", {
     geographic_tab <- imageTCGA:::.build_geographic_tab()
     expect_s3_class(geographic_tab, "shiny.tag")
     expect_true(grepl("Geographic Distribution", geographic_tab$attribs$title))
@@ -26,7 +26,7 @@ test_that("`.build_geographic_tab()` constructs the correct tab", {
     expect_true(any(grepl("state_bars", as.character(geographic_tab))))
 })
 
-test_that("`.build_about_tab()` constructs the correct About tab", {
+test_that(".build_about_tab() constructs the correct About tab", {
     about_tab <- imageTCGA:::.build_about_tab()
     expect_s3_class(about_tab, "shiny.tag")
     expect_true(grepl("About", about_tab$attribs$title))
