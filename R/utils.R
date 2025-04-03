@@ -75,8 +75,8 @@
 if (!require("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
 
-## Make sure GenomicDataCommons is installed
-# BiocManager::install("GenomicDataCommons")
+if (!require("GenomicDataCommons", quietly = TRUE))
+    install.packages("GenomicDataCommons")
 library("GenomicDataCommons")
 
 # File IDs to download
