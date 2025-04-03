@@ -89,7 +89,7 @@ filtering them based on various clinical and pathological parameters.
 ```{r,echo=FALSE, fig.wide = TRUE}
 knitr::include_graphics("figures/imageTCGA_shiny.png")
 ```
-<img src="figures/imageTCGA_shiny.png" style="width:100%;">
+
 
 # Filtering
 
@@ -109,8 +109,7 @@ You can generate R code to download the selected images to your
 local machine by clicking the orange "Generate R Code" button. 
 This utilizes the GenomicDataCommons package.
 
-In the example below, Ovarian Cancer images from Memorial Sloan
-Kettering Hospital have been selected:
+In the example below, Ovarian Cancer images have been selected:
 
 ```{r,echo=FALSE,fig.wide = TRUE}
 knitr::include_graphics("figures/imageTCGA_shiny_OV_Rcode.png")

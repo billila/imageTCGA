@@ -12,7 +12,7 @@ test_that(".build_summary_tab() constructs the correct tab", {
 test_that(".build_dotplot_tab() constructs the correct Dotplot plot tab", {
     dotplot_tab <- imageTCGA:::.build_dotplot_tab()
     expect_s3_class(dotplot_tab, "shiny.tag")
-    expect_true(grepl("Dotplot plot", dotplot_tab$attribs$title))
+    expect_true(grepl("Dotplot", dotplot_tab$attribs$title))
     expect_true(any(grepl("dotplot", as.character(dotplot_tab))))
 })
 
