@@ -86,9 +86,10 @@ This will open the application in your default web browser,
 where you can explore 11,765 diagnostic images from 9,640 patients, 
 filtering them based on various clinical and pathological parameters.
 
-```{r,echo=FALSE}
+```{r,echo=FALSE, fig.wide = TRUE}
 knitr::include_graphics("figures/imageTCGA_shiny.png")
 ```
+<img src="figures/imageTCGA_shiny.png" style="width:100%;">
 
 # Filtering
 
@@ -97,7 +98,7 @@ For instance, you can filter for a specific tumor type,
 such as Ovarian Cancer (107 diagnostic images).
 
 
-```{r,echo=FALSE}
+```{r,echo=FALSE,fig.wide = TRUE}
 knitr::include_graphics("figures/imageTCGA_shiny_OV.png")
 ```
 
@@ -111,7 +112,7 @@ This utilizes the GenomicDataCommons package.
 In the example below, Ovarian Cancer images from Memorial Sloan
 Kettering Hospital have been selected:
 
-```{r,echo=FALSE}
+```{r,echo=FALSE,fig.wide = TRUE}
 knitr::include_graphics("figures/imageTCGA_shiny_OV_Rcode.png")
 ```
 
@@ -123,8 +124,8 @@ The dot plot visualization allows users to explore gynecological tumors
 (BRCA, OV, UCS, UCEC). On the left panel, 
 you can select which variables to plot on the x-axis and y-axis.
 
-```{r,echo=FALSE}
-knitr::include_graphics("figures/imageTCGA_shiny_dotplot.png")
+```{r,echo=FALSE,fig.wide = TRUE}
+knitr::include_graphics("figures/imageTCGA_shiny_dotplot.png", dpi = 300)
 ```
 
 ## Geographic Distribution
@@ -137,7 +138,7 @@ For example, in the image below, GBM tumors have been selected.
 Additionally, summary statistics such as the number of cities and
 states are reported alongside a bar plot of the state distribution.
 
-```{r,echo=FALSE}
+```{r,echo=FALSE,fig.wide = TRUE}
 knitr::include_graphics("figures/imageTCGA_shiny_worldmap_GBM.png")
 ```
 
