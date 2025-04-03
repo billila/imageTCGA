@@ -35,9 +35,9 @@
         .render_state_bars(.filter_data(input))
     })
 
-    # Heatmap
-    output$heatmap <- renderPlot({
-        .render_heatmap(.prepare_heatmap_data(.filter_data(input), input))
+    # Dotplot
+    output$dotplot <- renderPlot({
+        .render_dotplot(.prepare_dotplot_data(.filter_data(input), input))
     })
 
     # Data table
@@ -103,23 +103,22 @@
         )
 }
 
-#' Render the heatmap
-#' @param data Processed heatmap data
+#' Render the dotplot
+#' @param data Processed dotplot data
 #' @return A ggplot object
 #' @noRd
-.render_heatmap <- function(data) {
+.render_dotplot <- function(data) {
     req(data)
 
     ggplot(data, aes(x = .data$Var2, y = .data$Var1)) +
-        geom_point(aes(size = .data$Freq, color = .data$Freq)) +
+        geom_point(aes(color = .data$Freq), size = 5) +
         theme_classic() +
         theme(axis.text.x = element_text(angle = 60, hjust = 1)) +
         scale_color_viridis(direction = 1) +
         labs(
             x = attr(data, "x_label"),
             y = attr(data, "y_label"),
-            color = "Number of Records",
-            size = "Number of Records"
+            color = "Number of Records"
         ) +
         theme(
             axis.text.x = element_text(size = 12),

@@ -9,11 +9,11 @@ test_that(".build_summary_tab() constructs the correct tab", {
     expect_true(any(grepl("download_code", as.character(summary_tab))))
 })
 
-test_that(".build_heatmap_tab() constructs the correct Heatmap plot tab", {
-    heatmap_tab <- imageTCGA:::.build_heatmap_tab()
-    expect_s3_class(heatmap_tab, "shiny.tag")
-    expect_true(grepl("Heatmap plot", heatmap_tab$attribs$title))
-    expect_true(any(grepl("heatmap", as.character(heatmap_tab))))
+test_that(".build_dotplot_tab() constructs the correct Dotplot plot tab", {
+    dotplot_tab <- imageTCGA:::.build_dotplot_tab()
+    expect_s3_class(dotplot_tab, "shiny.tag")
+    expect_true(grepl("Dotplot plot", dotplot_tab$attribs$title))
+    expect_true(any(grepl("dotplot", as.character(dotplot_tab))))
 })
 
 test_that(".build_geographic_tab() constructs the correct tab", {

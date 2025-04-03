@@ -26,7 +26,7 @@ test_that("render_state_bars works", {
     })
 })
 
-test_that("render_heatmap works", {
+test_that("render_dotplot works", {
     data <- data.frame(
         Var1 = c("A", "B", "C"),
         Var2 = c("X", "Y", "Z"),
@@ -37,9 +37,9 @@ test_that("render_heatmap works", {
     attr(data, "y_label") <- "Variable 1"
 
     expect_silent({
-        heatmap_output <- imageTCGA:::.render_heatmap(data)
-        expect_true("gg" %in% class(heatmap_output))
-        expect_true("ggplot" %in% class(heatmap_output))
+        dotplot_output <- imageTCGA:::.render_dotplot(data)
+        expect_true("gg" %in% class(dotplot_output))
+        expect_true("ggplot" %in% class(dotplot_output))
     })
 })
 

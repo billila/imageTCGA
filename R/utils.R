@@ -44,22 +44,22 @@
         )
 }
 
-#' Prepare heatmap data
+#' Prepare dotplot data
 #' @param data Filtered data
 #' @param input Shiny input object
-#' @return Processed heatmap data with attributes
+#' @return Processed dotplot data with attributes
 #' @noRd
-.prepare_heatmap_data <- function(data, input) {
+.prepare_dotplot_data <- function(data, input) {
     result <- data %>%
-        count(!!sym(input$heatmap_x), !!sym(input$heatmap_y)) %>%
+        count(!!sym(input$dotplot_x), !!sym(input$dotplot_y)) %>%
         rename(
-            Var1 = !!sym(input$heatmap_y),
-            Var2 = !!sym(input$heatmap_x),
+            Var1 = !!sym(input$dotplot_y),
+            Var2 = !!sym(input$dotplot_x),
             Freq = n
         )
 
-    attr(result, "x_label") <- input$heatmap_x
-    attr(result, "y_label") <- input$heatmap_y
+    attr(result, "x_label") <- input$dotplot_x
+    attr(result, "y_label") <- input$dotplot_y
 
     result
 }

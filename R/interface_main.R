@@ -19,7 +19,7 @@
     wellPanel(
         accordion(
             .build_filters_panel(),
-            .build_heatmap_panel()
+            .build_dotplot_panel()
         )
     )
 }
@@ -58,17 +58,17 @@
     )
 }
 
-#' Build the heatmap parameters panel
+#' Build the dotplot parameters panel
 #' @return A Shiny accordion panel
 #' @noRd
-.build_heatmap_panel <- function() {
+.build_dotplot_panel <- function() {
     accordion_panel(
-        "Heatmap Parameters",
-        selectInput("heatmap_x", "Heatmap X-axis",
+        "Dotplot Parameters",
+        selectInput("dotplot_x", "Dotplot X-axis",
             choices = names(db),
             selected = "Project.ID"
         ),
-        selectInput("heatmap_y", "Heatmap Y-axis",
+        selectInput("dotplot_y", "Dotplot Y-axis",
             choices = names(db),
             selected = "Sample.Type"
         )
@@ -81,7 +81,7 @@
 .build_main_panel <- function() {
     tabsetPanel(
         .build_summary_tab(),
-        .build_heatmap_tab(),
+        .build_dotplot_tab(),
         .build_geographic_tab(),
         .build_about_tab()
     )

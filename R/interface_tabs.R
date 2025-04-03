@@ -44,15 +44,15 @@
     )
 }
 
-#' Build the heatmap tab
+#' Build the dotplot tab
 #' @return A Shiny tab panel
 #' @noRd
-.build_heatmap_tab <- function() {
+.build_dotplot_tab <- function() {
     tabPanel(
-        "Heatmap plot",
+        "Dotplot",
         card(
-            card_header("Distribution Heatmap"),
-            plotOutput("heatmap", height = "600px")
+            card_header("Distribution Dotplot"),
+            plotOutput("dotplot", height = "600px")
         )
     )
 }

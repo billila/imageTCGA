@@ -14,7 +14,7 @@ test_that(".prepare_geo_data correctly aggregates geographic data", {
         expect_equal(nrow(geo_data), 2)
 })
 
-test_that(".prepare_heatmap_data correctly prepares data for the heatmap", {
+test_that(".prepare_dotplot_data correctly prepares data for the dotplot", {
         db_example <- tibble::tibble(
                 Case.ID = c("TCGA-01-0001", "TCGA-02-0001", "TCGA-03-0001"),
                 Project.ID = c("TCGA-GBM", "TCGA-GBM", "TCGA-GBM"),
@@ -26,16 +26,16 @@ test_that(".prepare_heatmap_data correctly prepares data for the heatmap", {
                 gene = c("BRCA1", "BRCA2", "BRCA1")
         )
 
-        input <- list(heatmap_x = "gene", heatmap_y = "state")
+        input <- list(dotplot_x = "gene", dotplot_y = "state")
 
         assign("db", db_example, envir = .GlobalEnv)
-        heatmap_data <- imageTCGA:::.prepare_heatmap_data(db_example, input)
+        dotplot_data <- imageTCGA:::.prepare_dotplot_data(db_example, input)
 
-        expect_equal(nrow(heatmap_data), 2)
-        expect_equal(heatmap_data$Var1[1], "Texas")
-        expect_equal(heatmap_data$Var2[1], "BRCA1")
-        expect_equal(attr(heatmap_data, "x_label"), "gene")
-        expect_equal(attr(heatmap_data, "y_label"), "state")
+        expect_equal(nrow(dotplot_data), 2)
+        expect_equal(dotplot_data$Var1[1], "Texas")
+        expect_equal(dotplot_data$Var2[1], "BRCA1")
+        expect_equal(attr(dotplot_data, "x_label"), "gene")
+        expect_equal(attr(dotplot_data, "y_label"), "state")
 })
 
 test_that(".generate_download_code correctly creates download code", {
