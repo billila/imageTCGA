@@ -15,7 +15,7 @@ download data from the TCGA Diagnostic Image Database.
 }
 \examples{
 if (interactive()) {
-    BiocHubsShiny()
+    imageTCGA()
 }
 
 }

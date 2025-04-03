@@ -7,17 +7,13 @@
 Follow the steps below to install and load the package.
 
 ```r
-# Step 1: Install devtools if you haven't already
-install.packages("devtools")
+## Make sure BiocManager is installed
+if (!require("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
 
-# Step 2: Load devtools
-library("devtools")
-
-# Step 3: Install imageTCGA from GitHub
-devtools::install_github("billila/imageTCGA")
-
-# Step 4: Load imageTCGA
-library(imageTCGA)
+if (!require("GenomicDataCommons", quietly = TRUE))
+    install.packages("GenomicDataCommons")
+library("GenomicDataCommons")
 ```
 
 ## Run the shiny App

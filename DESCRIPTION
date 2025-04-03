@@ -45,7 +45,6 @@ Suggests:
     knitr,
     rmarkdown,
     sessioninfo,
-    shinytest2,
     testthat,
     tibble,
     GenomicDataCommons
