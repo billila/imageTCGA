@@ -11,9 +11,9 @@ Follow the steps below to install and load the package.
 if (!require("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
 
-if (!require("GenomicDataCommons", quietly = TRUE))
-    install.packages("GenomicDataCommons")
-library("GenomicDataCommons")
+if (!require("imageTCGA", quietly = TRUE))
+    install.packages("imageTCGA")
+library("imageTCGA")
 ```
 
 ## Run the shiny App
