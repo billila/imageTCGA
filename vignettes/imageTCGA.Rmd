@@ -27,7 +27,10 @@ author:
 package: imageTCGA
 output:
   BiocStyle::html_document:
-    toc: false
+    toc: true
+    number_sections: true
+    toc_float: true
+    toc_depth: 3
 vignette: >
   %\VignetteIndexEntry{imageTCGA}
   %\VignetteEngine{knitr::rmarkdown}
