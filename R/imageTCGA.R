@@ -16,7 +16,7 @@
 #'
 #' @examples
 #' if (interactive()) {
-#'     BiocHubsShiny()
+#'     imageTCGA()
 #' }
 #'
 #' @export
