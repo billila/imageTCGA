@@ -12,7 +12,7 @@ if (!require("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
 
 if (!require("imageTCGA", quietly = TRUE))
-    install.packages("imageTCGA")
+    BiocManager::install("imageTCGA")
 library("imageTCGA")
 ```
 
