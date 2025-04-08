@@ -8,4 +8,4 @@ options(repos = BiocManager::repositories())
 if (!requireNamespace("imageTCGA", quietly = TRUE))
   BiocManager::install("imageTCGA")
 
-imageTCGA2::imageTCGA()
+imageTCGA::imageTCGA()
