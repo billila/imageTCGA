@@ -1,0 +1,25 @@
+---
+output: github_document
+knit: (function(inputFile, encoding) {
+  rmarkdown::render(inputFile, encoding = encoding, output_dir = "../../") })
+---
+
+# imageTCGA <img align="right" width="170" src="https://raw.githubusercontent.com/billila/imageTCGA/devel/vignettes/figures/imageTCGA.png">
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  cache = TRUE,
+  out.width = "100%"
+)
+```
+
+```{r,echo=FALSE,eval=FALSE}
+## Generate the ./README.md (relative to base folder)
+rmarkdown::render(input = "inst/scripts/README.Rmd", output_dir = ".")
+```
+
+```{r, child="../../vignettes/imageTCGA.Rmd"}
+
+```
