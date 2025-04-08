@@ -4,7 +4,7 @@ knit: (function(inputFile, encoding) {
   rmarkdown::render(inputFile, encoding = encoding, output_dir = "../../") })
 ---
 
-# imageTCGA <img align="right" width="170" src="https://raw.githubusercontent.com/billila/imageTCGA/devel/vignettes/figures/imageTCGA.png">
+# imageTCGA <img align="right" width="125" src="https://raw.githubusercontent.com/billila/imageTCGA/devel/vignettes/figures/imageTCGA.png">
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(

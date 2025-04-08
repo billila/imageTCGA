@@ -1,5 +1,5 @@
 
-# imageTCGA <img align="right" width="170" src="https://raw.githubusercontent.com/billila/imageTCGA/devel/vignettes/figures/imageTCGA.png">
+# imageTCGA <img align="right" width="125" src="https://raw.githubusercontent.com/billila/imageTCGA/devel/vignettes/figures/imageTCGA.png">
 
 # Introduction
 
