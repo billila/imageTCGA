@@ -1,5 +1,11 @@
 
-# imageTCGA <img align="right" width="170" src="https://raw.githubusercontent.com/billila/imageTCGA/devel/vignettes/figures/imageTCGA.png">
+<h1 style="height: 205.141px; display: flex; align-items: center; justify-content: space-between; padding-bottom: 0px;">
+imageTCGA <a target="_blank"
+        href="https://raw.githubusercontent.com/billila/imageTCGA/devel/vignettes/figures/imageTCGA.png">
+<img align="right" width="170"
+        src="https://raw.githubusercontent.com/billila/imageTCGA/devel/vignettes/figures/imageTCGA.png"
+        style="max-width:100%;" alt=""> </a>
+</h1>
 
 # Introduction
 
