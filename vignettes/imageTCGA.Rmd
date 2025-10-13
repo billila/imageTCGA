@@ -2,9 +2,8 @@
 title: "imageTCGA: A Shiny application to explore the TCGA Diagnostic Images"
 author:
 - name: Ilaria Billato
-  affiliation: [
-    "Department of Biology, University of Padova"
-  ]
+  affiliation: >
+    Department of Biology, University of Padova
 - name: Marcel Ramos Pérez
   affiliation: >
     CUNY Graduate School of Public Health and Health Policy, New York, NY USA
@@ -26,18 +25,18 @@ author:
     Department of Biology, University of Padova
 package: imageTCGA
 output:
-  BiocStyle::html_document:
-    toc: true
-    number_sections: true
-    toc_float: true
-    toc_depth: 3
+    BiocStyle::html_document:
+        toc: true
+        number_sections: true
+        toc_float: true
+        toc_depth: 3
 vignette: >
-  %\VignetteIndexEntry{imageTCGA}
+  %\VignetteIndexEntry{imageTCGA: A Shiny application to explore the TCGA Diagnostic Images}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 
-```{r setup, include=FALSE,echo=FALSE}
+```{r setup, include=FALSE, echo=FALSE}
 knitr::opts_chunk$set(
     collapse = TRUE,
     comment = "#>",

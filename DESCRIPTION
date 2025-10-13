@@ -10,6 +10,10 @@ Authors@R: c(
             comment = c(affiliation = 
             "CUNY Graduate School of Public Health and Health Policy, 
             New York, NY USA")),
+    person("Mohamed", "Omar", role = "ctb",
+            comment = c(affiliation = 
+            "Department of Computational Biomedicine, Cedars-Sinai Medical 
+            Center, Los Angeles, California")),
     person("Sehyun", "Oh", role = "ctb",
             comment = c(affiliation = 
             "CUNY Graduate School of Public Health and Health Policy, 
