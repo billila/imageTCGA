@@ -214,3 +214,17 @@
         )
     )
 }
+
+
+#' Build the provgigapath tab
+#' @return A Shiny tab panel
+#' @noRd
+.build_purity_tab <- function() {
+    tabPanel(
+        "Purity",
+        card(
+            card_header("Purity"),
+            plotOutput("dotplot", height = "600px")
+        )
+    )
+}
