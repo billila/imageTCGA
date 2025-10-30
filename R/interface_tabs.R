@@ -147,3 +147,70 @@
         )
     )
 }
+
+
+#' Build the mutation tab
+#' @return A Shiny tab panel
+#' @noRd
+.build_mutation_tab <- function() {
+    tabPanel(
+        "Mutation",
+        card(
+            card_header("Mutation Distribution"),
+            plotOutput("dotplot", height = "600px")
+        )
+    )
+}
+
+#' Build the CNA tab
+#' @return A Shiny tab panel
+#' @noRd
+.build_cna_tab <- function() {
+    tabPanel(
+        "CNA",
+        card(
+            card_header("CNA"),
+            plotOutput("dotplot", height = "600px")
+        )
+    )
+}
+
+#' Build the survival tab
+#' @return A Shiny tab panel
+#' @noRd
+.build_survival_tab <- function() {
+    tabPanel(
+        "Survival",
+        card(
+            card_header("Survival KM"),
+            plotOutput("dotplot", height = "600px")
+        )
+    )
+}
+
+#' Build the hovernet tab
+#' @return A Shiny tab panel
+#' @noRd
+.build_hovernet_tab <- function() {
+    tabPanel(
+        "HoVer-Net",
+        card(
+            card_header("HoVer-Net"),
+            plotOutput("dotplot", height = "600px")
+        )
+    )
+}
+
+
+#' Build the provgigapath tab
+#' @return A Shiny tab panel
+#' @noRd
+.build_provgigapath_tab <- function() {
+    tabPanel(
+        "Prov-GigaPath",
+        card(
+            card_header("Prov-GigaPath"),
+            plotOutput("dotplot", height = "600px")
+        )
+    )
+}

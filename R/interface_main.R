@@ -83,6 +83,11 @@
         .build_summary_tab(),
         .build_dotplot_tab(),
         .build_geographic_tab(),
+        .build_mutation_tab(),
+        .build_cna_tab(),
+        .build_survival_tab(),
+        .build_hovernet_tab(),
+        .build_provgigapath_tab(),
         .build_about_tab()
     )
 }
