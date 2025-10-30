@@ -86,6 +86,7 @@
         .build_mutation_tab(),
         .build_cna_tab(),
         .build_survival_tab(),
+        .build_purity_tab(),
         .build_hovernet_tab(),
         .build_provgigapath_tab(),
         .build_about_tab()
