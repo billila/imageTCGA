@@ -45,6 +45,24 @@
         .render_data_table(.filter_data(input))
     })
 
+    output$cn_heatmap <- renderPlot({
+        filtered_data <- .filter_data(input)
+        cn_data <- .prepare_cn_heatmap_data(filtered_data)
+        .render_cn_heatmap(cn_data)
+    })
+
+    output$sig_heatmap <- renderPlot({
+        filtered_data <- .filter_data(input)
+        sig_data <- .prepare_sig_heatmap_data(filtered_data)
+        .render_sig_heatmap(sig_data)
+    })
+
+    output$cx_heatmap <- renderPlot({
+        filtered_data <- .filter_data(input)
+        cx_data <- .prepare_cx_heatmap_data(filtered_data)
+        .render_cx_heatmap(cx_data)
+    })
+
     # Selected images table
     # output$selected_images_table <- DT::renderDT({
     #     .render_selected_images_table(.get_selected_rows(input))
@@ -163,3 +181,5 @@
         selection = 'single'
     )
 }
+
+

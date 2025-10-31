@@ -168,9 +168,29 @@
 .build_cna_tab <- function() {
     tabPanel(
         "CNA",
-        card(
-            card_header("CNA"),
-            plotOutput("dotplot", height = "600px")
+        fluidRow(
+            column(12,
+                   card(
+                       card_header("CN Signatures (Tao et al.)"),
+                       plotOutput("cn_heatmap", height = "400px")
+                   )
+            )
+        ),
+        fluidRow(
+            column(12,
+                   card(
+                       card_header("Mutational Signatures (Steel et al.)"),
+                       plotOutput("sig_heatmap", height = "400px")
+                   )
+            )
+        ),
+        fluidRow(
+            column(12,
+                   card(
+                       card_header("CX Signatures (Drews et al.)"),
+                       plotOutput("cx_heatmap", height = "400px")
+                   )
+            )
         )
     )
 }

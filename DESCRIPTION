@@ -42,7 +42,9 @@ Imports:
     tidyr,
     leaflet,
     clipr,
-    rlang
+    rlang,
+    tibble,
+    textshape
 Suggests:
     BiocManager,
     BiocStyle,
@@ -56,6 +58,7 @@ Suggests:
     GenomicDataCommons
 RoxygenNote: 7.3.3
 Depends: 
+    R (>= 3.5),
     shiny
 BugReports: https://github.com/billila/imageTCGA/issues
 URL: https://github.com/billila/imageTCGA
