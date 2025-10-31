@@ -201,12 +201,71 @@
 .build_survival_tab <- function() {
     tabPanel(
         "Survival",
-        card(
-            card_header("Survival KM"),
-            plotOutput("dotplot", height = "600px")
+        fluidRow(
+            column(6,
+                   card(
+                       card_header("Overall Survival (OS)"),
+                       uiOutput("os_km")
+                   )
+            ),
+            column(6,
+                   card(
+                       card_header("Progression-Free Interval (PFI)"),
+                       uiOutput("pfi_km")
+                   )
+            )
         )
+        # ,
+        # fluidRow(
+        #     column(6,
+        #            card(
+        #                card_header("Disease-Specific Survival (DSS)"),
+        #                uiOutput("dss_km")
+        #            )
+        #     ),
+        #     column(6,
+        #            card(
+        #                card_header("Recurrence-Free Survival"),
+        #                uiOutput("recurrence_km")
+        #            )
+        #     )
+        # )
     )
 }
+# .build_survival_tab <- function() {
+#     tabPanel(
+#         "Survival",
+#         fluidRow(
+#             column(6,
+#                    card(
+#                        card_header("Overall Survival (OS)"),
+#                        plotOutput("os_km", height = "400px")
+#                    )
+#             ),
+#             column(6,
+#                    card(
+#                        card_header("Progression-Free Interval (PFI)"),
+#                        plotOutput("pfi_km", height = "400px")
+#                    )
+#             )
+#         )
+#         #,
+#         # fluidRow(
+#         #     column(6,
+#         #            card(
+#         #                card_header("Disease-Specific Survival (DSS)"),
+#         #                plotOutput("dss_km", height = "400px")
+#         #            )
+#         #     ),
+#         #     column(6,
+#         #            card(
+#         #                card_header("Recurrence-Free Survival"),
+#         #                plotOutput("recurrence_km", height = "400px")
+#         #            )
+#         #     )
+#         # )
+#     )
+# }
 
 #' Build the hovernet tab
 #' @return A Shiny tab panel

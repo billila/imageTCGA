@@ -45,6 +45,7 @@
         .render_data_table(.filter_data(input))
     })
 
+    # CNA heatmap
     output$cn_heatmap <- renderPlot({
         filtered_data <- .filter_data(input)
         cn_data <- .prepare_cn_heatmap_data(filtered_data)
@@ -62,6 +63,99 @@
         cx_data <- .prepare_cx_heatmap_data(filtered_data)
         .render_cx_heatmap(cx_data)
     })
+
+    # survival KM
+
+    output$os_km <- renderUI({
+        div(
+            plotOutput("os_km_plot", height = "600px")
+        )
+    })
+
+    output$os_km_plot <- renderPlot({
+        filtered_data <- .filter_data(input)
+        km_result <- .render_os_km(filtered_data)
+
+        if (inherits(km_result, "ggsurvplot")) {
+            print(km_result)
+        } else {
+            km_result
+        }
+    }, height = 600)
+
+    # DSS Kaplan-Meier
+    output$dss_km <- renderUI({
+        div(
+            plotOutput("dss_km_plot", height = "600px")
+        )
+    })
+
+    output$dss_km_plot <- renderPlot({
+        filtered_data <- .filter_data(input)
+        km_result <- .render_dss_km(filtered_data)
+
+        if (inherits(km_result, "ggsurvplot")) {
+            print(km_result)
+        } else {
+            km_result
+        }
+    }, height = 600)
+
+    # PFI Kaplan-Meier
+    output$pfi_km <- renderUI({
+        div(
+            plotOutput("pfi_km_plot", height = "600px")
+        )
+    })
+
+    output$pfi_km_plot <- renderPlot({
+        filtered_data <- .filter_data(input)
+        km_result <- .render_pfi_km(filtered_data)
+
+        if (inherits(km_result, "ggsurvplot")) {
+            print(km_result)
+        } else {
+            km_result
+        }
+    }, height = 600)
+
+    # Recurrence Kaplan-Meier
+    output$recurrence_km <- renderUI({
+        div(
+            plotOutput("recurrence_km_plot", height = "600px")
+        )
+    })
+
+    output$recurrence_km_plot <- renderPlot({
+        filtered_data <- .filter_data(input)
+        km_result <- .render_recurrence_km(filtered_data)
+
+        if (inherits(km_result, "ggsurvplot")) {
+            print(km_result)
+        } else {
+            km_result
+        }
+    }, height = 600)
+
+    # output$os_km <- renderPlot({
+    #     filtered_data <- .filter_data(input)
+    #     .render_os_km(filtered_data)
+    # })
+    #
+    # output$dss_km <- renderPlot({
+    #     filtered_data <- .filter_data(input)
+    #     .render_dss_km(filtered_data)
+    # })
+    #
+    # output$pfi_km <- renderPlot({
+    #     filtered_data <- .filter_data(input)
+    #     .render_pfi_km(filtered_data)
+    # })
+    #
+    # output$recurrence_km <- renderPlot({
+    #     filtered_data <- .filter_data(input)
+    #     .render_recurrence_km(filtered_data)
+    # })
 
     # Selected images table
     # output$selected_images_table <- DT::renderDT({

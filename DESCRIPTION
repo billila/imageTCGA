@@ -44,7 +44,9 @@ Imports:
     clipr,
     rlang,
     tibble,
-    textshape
+    textshape,
+    survival,
+    survminer
 Suggests:
     BiocManager,
     BiocStyle,
