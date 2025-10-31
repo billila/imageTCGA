@@ -273,29 +273,84 @@
 .build_hovernet_tab <- function() {
     tabPanel(
         "HoVer-Net",
-        card(
-            card_header("HoVer-Net"),
-            plotOutput("dotplot", height = "600px")
+        fluidRow(
+            column(12,
+                   card(
+                       card_header("HoVer-Net segmentations"),
+                       card_body(
+                           div(
+                               style = "text-align: center; padding: 50px;",
+                               h3("Coming Soon", style = "color: #f39c12; margin-bottom: 30px;"),
+                               p(
+                                   "This panel will soon display HoVer-Net nuclei segmentation and classification results. Analysis outputs will be available in multiple formats including JSON annotations and H5AD files for seamless integration with downstream analysis workflows and visualization tools.",
+                                   style = "font-size: 16px; line-height: 1.6; margin-bottom: 30px; max-width: 800px; margin-left: auto; margin-right: auto;"
+                               ),
+                               div(
+                                   style = "background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin-top: 30px; border-left: 4px solid #dc3545;",
+                                   h5("Data Download", style = "color: #f39c12; margin-bottom: 15px;"),
+                                   p(
+                                       "Use the ImageFeatureTCGA package to download and access TCGA imaging data. The package conveniently incorporates imaging features and metadata into existing MultiAssayExperiment instances from curatedTCGAData, providing an integrated framework for multi-omics analysis with imaging data.",
+                                       style = "font-size: 14px; line-height: 1.5; margin-bottom: 15px;"
+                                   ),
+                                   p(
+                                       a("Visit ImageFeatureTCGA Repository",
+                                         href = "https://github.com/waldronlab/ImageFeatureTCGA",
+                                         target = "_blank",
+                                         style = "color: #f39c12; font-weight: bold; text-decoration: none;")
+                                   )
+                               )
+                           )
+                       )
+                   )
+            )
         )
     )
 }
 
 
-#' Build the provgigapath tab
+#' Build the Prov-GigaPath tab
 #' @return A Shiny tab panel
 #' @noRd
 .build_provgigapath_tab <- function() {
     tabPanel(
         "Prov-GigaPath",
-        card(
-            card_header("Prov-GigaPath"),
-            plotOutput("dotplot", height = "600px")
+        fluidRow(
+            column(12,
+                   card(
+                       card_header("Prov-GigaPath embeddings"),
+                       card_body(
+                           div(
+                               style = "text-align: center; padding: 50px;",
+                               h3("Coming Soon", style = "color: #f39c12; margin-bottom: 30px;"),
+                               p(
+                                   "This panel will soon feature ProvGigaPath analysis results. Data will be available at both tile-level and slide-level resolutions, enabling multi-scale analysis of histopathological images for comprehensive tissue characterization and biomarker discovery.",
+                                   style = "font-size: 16px; line-height: 1.6; margin-bottom: 30px; max-width: 800px; margin-left: auto; margin-right: auto;"
+                               ),
+                               div(
+                                   style = "background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin-top: 30px; border-left: 4px solid #dc3545;",
+                                   h5("Data Download", style = "color: #f39c12; margin-bottom: 15px;"),
+                                   p(
+                                       "Use the ImageFeatureTCGA package to download and access TCGA imaging data. The package conveniently incorporates imaging features and metadata into existing MultiAssayExperiment instances from curatedTCGAData, providing an integrated framework for multi-omics analysis with imaging data.",
+                                       style = "font-size: 14px; line-height: 1.5; margin-bottom: 15px;"
+                                   ),
+                                   p(
+                                       a("Visit ImageFeatureTCGA Repository",
+                                         href = "https://github.com/waldronlab/ImageFeatureTCGA",
+                                         target = "_blank",
+                                         style = "color: #f39c12; font-weight: bold; text-decoration: none;")
+                                   )
+                               )
+                           )
+                       )
+                   )
+            )
         )
     )
 }
 
 
-#' Build the provgigapath tab
+
+#' Build the purity tab
 #' @return A Shiny tab panel
 #' @noRd
 .build_purity_tab <- function() {
